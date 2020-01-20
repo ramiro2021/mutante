@@ -1,0 +1,95 @@
+<div class="container" >
+    <form  action="" [formGroup]=formulario>
+    <div class="row ">
+          <div class="col-12 text-center mt-3">
+              <h5>Ingrese sus datos personales</h5>
+         </div>
+         
+          <div class="col-4 mt-3">
+              <div class="form-group">
+                  <label for="">Nombre</label>
+                  <input type="text" class="form-control" formControlName="nombre" placeholder="ingrese su nombre" >
+                  <div *ngIf="formulario.controls['nombre'].invalid && formulario.controls['nombre'].dirty " 
+                  class="alert alert-danger" role="alert">
+                    El nombre es requerido
+                  </div>
+                </div>
+          </div>
+          <div class="col-4 mt-3">
+              <div class="form-group">
+                  <label for="">Apellido</label>
+                  <input type="text" class="form-control" formControlName="apellido" placeholder="ingrese su apellido" >
+                  <div *ngIf="formulario.controls['apellido'].invalid && formulario.controls['apellido'].dirty " 
+                  class="alert alert-danger" role="alert">
+                    El apellido es requerido
+                  </div> 
+                  
+              </div>    
+          </div>
+          <div class="col-4 mt-3">
+            <div class="form-group">
+                <label for="">Edad</label>
+                <input type="number" class="form-control" formControlName="edad" placeholder="ingrese su edad" >
+                <div *ngIf="formulario.controls['edad'].invalid && formulario.controls['edad'].dirty " 
+                class="alert alert-danger" role="alert">
+                  Su edad es requerida
+                </div>
+              </div>
+        </div>
+        <div class="col-12 text-center mt-3">
+            <h5>Ingrese su ADN</h5>
+            <div *ngIf="formulario.controls['adn'].invalid && formulario.controls['adn'].dirty " 
+                  class="alert alert-danger" role="alert">
+                    El ADN es requerido en su totalidad, no puede obener mas de 6 digitos por celda
+            </div>
+       </div>
+        <div formGroupName="adn"   class="mt-3">
+            <div class="form-group col-12 ">
+           <label for="" class="mr-5 ml-5">adn1 
+           <input  class="form-control " type="text" formControlName="adn1">
+           
+            </label>
+            
+            <label for="" class="mr-5 ml-5">adn2 
+           <input type="text" class="form-control" formControlName="adn2">
+            </label>
+            <label for="" class="mr-5 ml-5">adn3 
+                <input type="text" class="form-control" formControlName="adn3">
+            </label>
+            <label for="" class="mr-5 ml-5">adn4 
+                <input type="text" class="form-control" formControlName="adn4">
+            </label>
+            <label for="" class="mr-5 ml-5">adn5
+                <input type="text" class="form-control" formControlName="adn5">
+            </label>
+            <label for="" class="mr-5 ml-5">adn6 
+                <input type="text" class="form-control" formControlName="adn6">
+             </label>
+            </div>
+        </div>
+
+          
+        
+      <div class="col-12 text-cemter mt-3 mb-3">
+          <button [disabled]="!formulario.valid" type="submit" class="btn btn-primary btn-block" (click)="agregar(formulario)" 
+          >verificar mutante</button>
+        </div>
+      
+    </div>
+    </form> 
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

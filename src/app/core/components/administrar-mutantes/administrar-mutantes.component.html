@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <button class= "btn btn-dark mt-4 mb-4" (click)="ngOnChanges()"><h2> Listado de Mutantes</h2></button>
+            
+            <table class="table table-striped ">
+                <thead class="">
+                    <th> </th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>edad</th>
+                    <th>adn</th>
+                    <th><i class="fa fa-cogs" aria-hidden="true"></i> </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let persona of personaLista">
+                        
+                        <td ><i class="fa fa-user-circle-o" aria-hidden="true"></i></td>
+                        <td>{{persona.nombre}}</td>
+                        <td>{{persona.apellido}}</td>
+                        <td>{{persona.edad}}</td>
+                        <td>{{persona.adn.adn1}} <br> {{persona.adn.adn2}} <br>  {{persona.adn.adn3}} <br>
+                            {{persona.adn.adn4}} <br> {{persona.adn.adn5}} <br> {{persona.adn.adn6}}
+                        </td>
+                        <td>
+                            <a class="btn" (click)= "editar($event,persona)">
+                                <i class="fa fa-pencil-square-o"></i>editar
+                            </a>
+                            <a class="btn" (click)="eliminar(persona)">
+                                <i class="fa fa-trash-o"></i>eliminar
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
